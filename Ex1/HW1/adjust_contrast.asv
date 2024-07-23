@@ -1,0 +1,11 @@
+%Natan Davidov 211685300, Nikolai Krokhmal 320717184
+
+function modImage = adjust_contrast(img,range_low,range_high)
+    modImage = zeros(size(img));
+    [rows, cols] = size(img);
+    for row = 1:rows
+        for col = 1:cols
+            modImage(row,col) = ((img(row,col)-range_low)*range_high)/(range_high-range_low);
+        end
+    end
+end
